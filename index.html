@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style type="text/tailwindcss">
+        @layer components {
+            /* Board Letter Tiles */
+            .letter {
+                @apply flex items-center justify-center border-2 border-gray-300 rounded 
+                       w-8 h-10 text-lg 
+                       sm:w-12 sm:h-14 sm:text-2xl 
+                       font-bold uppercase select-none transition-all duration-200 
+                       bg-white text-black;
+            }
+
+            /* Spacer for word separation */
+            .space {
+                @apply w-4 h-10 sm:w-8 sm:h-14 border-none bg-transparent;
+            }
+
+            /* Keyboard Buttons */
+            .keyboard-button {
+                @apply flex items-center justify-center rounded cursor-pointer select-none 
+                       font-bold uppercase text-sm sm:text-base shadow-md
+                       h-12 sm:h-14 mx-0.5
+                       transition-transform active:scale-95 touch-manipulation;
+            }
+
+            /* Color States (Mapped to logic.js classes) */
+            .green { @apply bg-green-600 border-green-700 text-white; }
+            .orange { @apply bg-yellow-500 border-yellow-600 text-white; }
+            .purple { @apply bg-purple-600 border-purple-700 text-white; }
+            .gray { @apply bg-gray-500 border-gray-600 text-white; }
+            .white { @apply bg-gray-100 border-gray-300 text-black hover:bg-gray-200; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        h1 {
+            font-family: 'Luckiest Guy', cursive;
+        }
+    </style>
+
+    <title>Phrazle Clone</title>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col overflow-hidden">
+
+    <header class="p-4 text-center border-b bg-white shadow-sm z-10 shrink-0">
+        <h1 class="text-3xl sm:text-4xl tracking-wider text-indigo-600">PHRAZLE</h1>
+    </header>
+
+    <div class="game-container flex flex-col flex-grow items-center relative w-full max-w-5xl mx-auto">
+        
+        <div class="board-container flex flex-col items-center justify-start p-2 sm:p-6 w-full overflow-y-auto flex-grow gap-2">
+            <div class="phrase-row flex justify-center flex-nowrap w-full"></div>
+            <div class="phrase-row flex justify-center flex-nowrap w-full"></div>
+            <div class="phrase-row flex justify-center flex-nowrap w-full"></div>
+            <div class="phrase-row flex justify-center flex-nowrap w-full"></div>
+            <div class="phrase-row flex justify-center flex-nowrap w-full"></div>
+            <div class="phrase-row flex justify-center flex-nowrap w-full"></div>
+        </div>
+
+        <div class="keyboard-container w-full bg-slate-200 border-t-4 border-slate-300 p-2 sm:p-4 pb-6 shrink-0 z-20">
+            <div class="max-w-3xl mx-auto flex flex-col gap-2">
+                
+                <div class="keyboard-row flex justify-center w-full">
+                    <button class="keyboard-button flex-1">q</button>
+                    <button class="keyboard-button flex-1">w</button>
+                    <button class="keyboard-button flex-1">e</button>
+                    <button class="keyboard-button flex-1">r</button>
+                    <button class="keyboard-button flex-1">t</button>
+                    <button class="keyboard-button flex-1">y</button>
+                    <button class="keyboard-button flex-1">u</button>
+                    <button class="keyboard-button flex-1">i</button>
+                    <button class="keyboard-button flex-1">o</button>
+                    <button class="keyboard-button flex-1">p</button>
+                </div>
+                
+                <div class="keyboard-row flex justify-center w-full px-2 sm:px-6">
+                    <button class="keyboard-button flex-1">a</button>
+                    <button class="keyboard-button flex-1">s</button>
+                    <button class="keyboard-button flex-1">d</button>
+                    <button class="keyboard-button flex-1">f</button>
+                    <button class="keyboard-button flex-1">g</button>
+                    <button class="keyboard-button flex-1">h</button>
+                    <button class="keyboard-button flex-1">j</button>
+                    <button class="keyboard-button flex-1">k</button>
+                    <button class="keyboard-button flex-1">l</button>
+                </div>
+                
+                <div class="keyboard-row flex justify-center w-full">
+                    <button class="keyboard-button flex-[1.5] bg-slate-300 text-xs sm:text-sm">Enter</button>
+                    <button class="keyboard-button flex-1">z</button>
+                    <button class="keyboard-button flex-1">x</button>
+                    <button class="keyboard-button flex-1">c</button>
+                    <button class="keyboard-button flex-1">v</button>
+                    <button class="keyboard-button flex-1">b</button>
+                    <button class="keyboard-button flex-1">n</button>
+                    <button class="keyboard-button flex-1">m</button>
+                    <button class="keyboard-button flex-[1.5] bg-slate-300 text-xs sm:text-sm" data-key="backspace">Del</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="logic.js"></script>
+</body>
+</html>
