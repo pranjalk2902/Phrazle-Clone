@@ -13,24 +13,27 @@
     <style type="text/tailwindcss">
         @layer components {
             /* Board Letter Tiles */
+            /* UPDATED: Smaller width (w-6) and text (text-sm) for mobile */
             .letter {
                 @apply flex items-center justify-center border-2 border-gray-300 rounded 
-                       w-8 h-10 text-lg 
+                       w-6 h-8 text-sm 
                        sm:w-12 sm:h-14 sm:text-2xl 
                        font-bold uppercase select-none transition-all duration-200 
                        bg-white text-black;
             }
 
             /* Spacer for word separation */
+            /* UPDATED: Smaller spacer for mobile */
             .space {
-                @apply w-4 h-10 sm:w-8 sm:h-14 border-none bg-transparent;
+                @apply w-3 h-8 sm:w-8 sm:h-14 border-none bg-transparent;
             }
 
             /* Keyboard Buttons */
+            /* UPDATED: Slightly shorter (h-10) and smaller text for mobile */
             .keyboard-button {
                 @apply flex items-center justify-center rounded cursor-pointer select-none 
-                       font-bold uppercase text-sm sm:text-base shadow-md
-                       h-12 sm:h-14 mx-0.5
+                       font-bold uppercase text-xs sm:text-base shadow-md
+                       h-10 sm:h-14 mx-0.5
                        transition-transform active:scale-95 touch-manipulation;
             }
 
@@ -44,13 +47,14 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            touch-action: manipulation; /* Prevents double-tap to zoom */
         }
         
         h1 {
             font-family: 'Luckiest Guy', cursive;
         }
     </style>
-
+    
     <title>Phrazle Clone</title>
 </head>
 <body class="bg-slate-50 min-h-screen flex flex-col overflow-hidden">
