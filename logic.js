@@ -1,6 +1,6 @@
-// const phrase = 'devastating circumstances falling over';
+const phrase = 'devastating circumstances falling over';
 // const phrase = 'my achilles heel';
-const phrase = 'thumbs up';
+// const phrase = 'thumbs up';
 const phraseTrimmed = phrase.replace(/ /g,'');
 const phraseContainer = document.getElementsByClassName('board-container');
 // const guessedWordsList = [];
@@ -330,4 +330,5 @@ function generateColours(phrase, guess) {
     }
     
     return wordList;
+
     }
