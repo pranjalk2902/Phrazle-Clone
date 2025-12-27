@@ -330,6 +330,4 @@ function generateColours(phrase, guess) {
     }
     
     return wordList;
-
     }
-
