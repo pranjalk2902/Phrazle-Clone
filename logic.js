@@ -1,4 +1,5 @@
-const phrase = 'devastating circumstances falling over';
+const phrase = 'extenuating circumstances';
+// const phrase = 'devastating circumstances falling over';
 // const phrase = 'my achilles heel';
 // const phrase = 'get the runaround';
 const phraseTrimmed = phrase.replace(/ /g,'');
