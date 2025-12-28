@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Luckiest Guy'; */
+    font-weight:bold;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+}
+
+.keyboard-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: #f0f0f0; */
+    padding: 10px;
+    height: 30vh;
+    border: 5px solid black;
+    /* box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);  */
+}
+
+.board-container {
+    /* flex: 1; */
+    align-items: center;
+    justify-content: center;
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 20px;
+    margin: 40px;
+    height:60vh;
+    overflow-y:auto;
+}
+
+.phrase-row {
+    justify-content: center;
+    /* display:grid; */
+    /* grid-template-columns: repeat(13, 1fr); added through javascript*/
+    /* grid-gap: 1px; */
+}
+
+.keyboard-row {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.letter, .keyboard-button {
+    display:inline-block;
+    border: 1px solid black;
+    height: 60px;
+    width: 60px;
+    vertical-align: top; /* to prevent the cell containing the text to move down */
+
+    font-size: 2rem;
+    text-align: center;
+    margin: 2px;
+    padding: 5px;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.keyboard-button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.wide-button {
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: #e2e8f0;
+    /* padding: 0 15px; */
+}
+
+.white {
+    background-color: #FFFFFF;
+}
+
+.space {
+    display: inline-block;
+    border: none;
+    height: 60px;
+    width: 60px;
+    vertical-align: top;
+}
+
+.green {
+    background-color: #05864D;
+    color: #FFFFFF;
+}
+
+.orange {
+    background-color: #D5923B;
+    color: #FFFFFF;
+}
+
+.purple {
+    background-color: #800080;
+    color: #FFFFFF;
+}
+
+.gray {
+    background-color: #737373;
+    color: #FFFFFF;
+}
+
+.white {
+    background-color: #FFFFFF;
+    color: black;
+}
