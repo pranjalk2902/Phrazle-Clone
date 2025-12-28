@@ -52,8 +52,8 @@
 .letter, .keyboard-button {
     display:inline-block;
     border: 1px solid black;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     vertical-align: top; /* to prevent the cell containing the text to move down */
 
     font-size: 2rem;
